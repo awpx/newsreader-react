@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react'
 import { Story } from '../components/Story'
-import { getStoryIds, getStory } from '../services/hackernewsApi'
+import { getStoryIds } from '../services/hackernewsApi'
+import { GlobalStyle, StoriesContainerWrapper } from '../styles/StoriesContainerStyles'
 
 export const StoriesContainer = () => {
   const [ storyIds, setStoryIds ] = useState([])
@@ -17,6 +18,12 @@ export const StoriesContainer = () => {
   }, [])
 
   return (
-    storyIds.map(storyId => <Story storyId={storyId} />)
+    <>
+      <GlobalStyle />
+      <StoriesContainerWrapper data-testid='stories-container'>
+        <h1>Hackernews Stories</h1>
+        {storyIds.map(storyId => <Story key={storyId} storyId={storyId} />)}
+      </StoriesContainerWrapper>
+    </>
   )
 }

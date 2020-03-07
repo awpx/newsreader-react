@@ -1,6 +1,7 @@
-// eslint-disable react-hooks/exhaustive-deps
+/* eslint-disable react-hooks/exhaustive-deps */
 import React, { useState, useEffect } from 'react'
 import { getStory } from '../services/hackernewsApi'
+import { StoryTitle, StoryWrapper, StoryMeta, StoryMetaElement } from '../styles/StoryStyles'
 
 export const Story = ({ storyId }) => {
   const [story, setStory] = useState({})
@@ -19,9 +20,22 @@ export const Story = ({ storyId }) => {
     fetchData()
   }, [])
 
-  return (
-    <div>
-      {JSON.stringify(story)}
-    </div>
-  )
+  return story && story.url ? (
+    <StoryWrapper data-testid='story'> 
+      <StoryTitle>
+        <a href={story.url}> {story.title} </a>
+      </StoryTitle>
+
+      <StoryMeta>
+        <span data-testid='story-by'>
+          <StoryMetaElement color='#000'>By: </StoryMetaElement> {story.by}
+        </span>
+        <span data-testid='story-time'>
+          <StoryMetaElement color='#000'>Time: </StoryMetaElement> {`  `}
+          {story.time}
+        </span>
+      </StoryMeta>
+      
+    </StoryWrapper>
+  ) : null
 }
