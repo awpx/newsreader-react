@@ -13,7 +13,7 @@ export const StoriesContainer = () => {
       const Ids = await getStoryIds()
       setStoryIds(Ids)
     }
-    console.log(count)
+
     fetchData()
   }, [count])
 

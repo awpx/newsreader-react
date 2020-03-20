@@ -1,5 +1,6 @@
+/* eslint-disable react-hooks/exhaustive-deps */
 import { useState, useEffect } from 'react'
-import { MAX_STORIES, STORY_INCREMENT } from '../constans/index'
+import { MAX_STORIES, STORY_INCREMENT } from '../constants/index'
 import { debounce } from '../utils/debounce'
 
 export const useInfiniteScroll = () => {
