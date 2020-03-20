@@ -14,7 +14,7 @@ export const GlobalStyle = createGlobalStyle`
     padding: 0;
     line-height: 1;
     color: #202020;
-    background-color: #fafafe;
+    background-color: #EBF3F3;
     font-family: Arial, Helvetica, sans-serif;
     font-size: 16px;
   }

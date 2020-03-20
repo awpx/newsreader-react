@@ -32,8 +32,8 @@ export const Story = memo(function Story({ storyId }) {
           <StoryMetaElement color='#000'>By:</StoryMetaElement> {story.by}
         </span>
         <span data-testid='story-time'>
-          <StoryMetaElement color='#000'>Time: </StoryMetaElement> {`  `}
-          {mapTime(story.time)}
+          <StoryMetaElement color='#000'>Posted: </StoryMetaElement> {`  `}
+          {mapTime(story.time)} ago
         </span>
       </StoryMeta>
       
